@@ -1,0 +1,34 @@
+id,shapeid,name,alpha,code,wikidata,class,sdate,edate
+1001,1,Stockholms län,AB,1,104231,l1 ab,1968-01-01,9
+1002,3,Uppsala län,C,3,104926,l3 c,1997-01-01,9
+1003,4,Södermanlands län,D,4,106915,l4 d,1683,9
+1004,5,Östergötlands län,E,5,104940,l5 e,1634,9
+1005,6,Jönköpings län,F,6,103672,l6 f,1998-01-01,9
+1006,7,Kronobergs län,G,7,104746,l7 g,1674,9
+1007,8,Kalmar län,H,8,103707,l8 h,1634,9
+1008,9,Gotlands län,I,9,103738,l9 i,1678,9
+1009,10,Blekinge län,K,10,102377,l10 k,1683,9
+1010,12,Skåne län,M,12,103659,l12 m,1997-01-01,9
+1011,13,Hallands län,N,13,103691,l13 n,1974-01-01,9
+1012,14,Västra Götalands län,O,14,103093,l14 o,1998-01-01,9
+1013,17,Värmlands län,S,17,106789,l17 s,1779,9
+1014,18,Örebro län,T,18,104257,l18 t,1634,9
+1015,19,Västmanlands län,U,19,105075,l19 u,2007-01-01,9
+1016,20,Dalarnas län,W,20,103732,l20 w,1997-01-01,9
+1017,21,Gävleborgs län,X,21,103699,l21 x,1762,9
+1018,22,Västernorrlands län,Y,22,104891,l22 y,1762,9
+1019,23,Jämtlands län,Z,23,103679,l23 z,1810,9
+1020,24,Västerbottens län,AC,24,104877,l24 ac,1638,9
+1021,25,Norrbottens län,BD,25,103686,l25 bd,1810-01-01,9
+1022,20,Kopparbergs län,W,20,103732,l20 w,1634,1996-12-31
+1023,30,Västmanlands län,U,19,105075,l19 u,1634,2006-12-31
+1024,31,Uppsala län,C,3,104926,l3 c,1634,1996-12-31
+1025,32,Göteborgs och Bohus län,O,14,579801,l14 o,1700,1997-12-31
+1026,15,Älvsborgs län,P,15,254990,l15 p,1634,1997-12-31
+1027,16,Skaraborgs län,R,16,922842,l16 r,1634,1997-12-31
+1028,33,Jönköpings län,F,6,103672,l6 f,1687,1997-12-31
+1029,35,Malmöhus län,M,12,533915,l12 m,1974-01-01,1996-12-31
+1030,11,Kristianstads län,L,11,339637,l11 l,1974-01-01,1996-12-31
+1031,37,Hallands län,N,13,103691,l13 n,1719,1973-12-31
+1032,34,Malmöhus län,M,12,533915,l12 m,1952-01-01,1973-12-31
+1033,36,Kristianstads län,L,11,339637,l11 l,1952-01-01,1973-12-31
