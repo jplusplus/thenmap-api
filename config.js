@@ -155,7 +155,7 @@ var config = {
       bbox: [-180, -90, 180, 90],
       languages: ["sv","en","fi","fr","de","es","ru","it","nl","pl","zh","pt","ar","ja","fa","nn","no","he","tr","da","uk","ca","id","hu","vi","ko","et","cs","hi","sr","bg", "nn"],
       defaultLanguage: "en",
-      recommendedProjections: ["robinson", "winkel3", "kavrayskiy7", "wagner6", "winkel3-pacific"]
+      recommendedProjections: ["robinson", "eckert4", "winkel3", "kavrayskiy7", "wagner6", "winkel3-pacific"]
     }
   },
   datasetAliases: {
