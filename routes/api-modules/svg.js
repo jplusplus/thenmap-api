@@ -1,21 +1,21 @@
 /* This module will use one of the path generators in the
    svg directory, to render a svg.
 */
-var Api = require(__dirname + '/baseModule.js');
+var Api = require(__dirname + '/baseModule.js')
 Api._cache = {}
 
-var D3PathGenerator = require(__dirname + '/svg/d3PathGenerator.js');
+var D3PathGenerator = require(__dirname + '/svg/d3PathGenerator.js')
 
-var cheerio = require('cheerio');
+var cheerio = require('cheerio')
 
 module.exports = function(ApiParams) {
 
-  var api = new Api("svg", ApiParams);
+  var api = new Api("svg", ApiParams)
 
   api.get = function(callback) {
-    var self = this;
-    this.datasetConfig = this.apiParams.config.datasets[this.apiParams.dataset];
-    this.getCallback = callback;
+    var self = this
+    this.datasetConfig = this.apiParams.config.datasets[this.apiParams.dataset]
+    this.getCallback = callback
 
     //Use the first recommended projection for this dataset, if none given
     this.projection = this.parameters["projection"] || this.parameters["svg_proj"]
@@ -26,8 +26,8 @@ module.exports = function(ApiParams) {
     this.variant = this.parameters["svg_variant"] || null
 
     /* Round up dimension for a better chance of caching */ 
-    this.width = Math.ceil(this.width / 20.0) * 20;
-    this.height = Math.ceil(this.height / 20.0) * 20;
+    this.width = Math.ceil(this.width / 20.0) * 20
+    this.height = Math.ceil(this.height / 20.0) * 20
  
     self.cacheKey = self.apiParams.date + self.apiParams.dataset + self.projection + self.width + self.height + this.parameters["svg_props"] + this.lang + this.variant
     if (self.cacheKey in Api._cache){
@@ -63,7 +63,7 @@ module.exports = function(ApiParams) {
         self._callback(null, paths, self.getCallback)
       })
 
-    });
+    })
 
   }
   return api
