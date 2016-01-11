@@ -1,0 +1,114 @@
+extends layout
+block vars
+   - var title = "Docs"
+
+block content
+  h1 #{title}
+  p.lead Welcome to the Thenmap API!
+
+  p General syntax:
+  pre api-version/dataset/modules/date
+  p Only <code>api-version</code> and <code>dataset</code> are required, though you will generally want all four parts in there.
+
+  p Here is an example, returning geodata for Swedish municipalities as of 1982:
+  pre <a href="/v1/se-7/geo/1982">v1/se-7/geo/1982</a>
+
+  p All url parts after api-version can also be provided as url parameters:
+  pre <a href="v1/?dataset=se-7&amp;modules=geo&amp;date=1982">v1/?dataset=se-7&modules=geo&date=1982</a>
+
+  h2#version Version
+  pre <b>version</b>/dataset/modules/date
+
+  p The only valid version is <code>v1</code>
+
+  h2#datasets Datasets
+  pre version/<b>dataset</b>/modules/date
+
+  p We name our datasets like this: <code>area-level</code>. For the area, we use <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166</a> codes where available, and for level, we use the ten levels of administrative border from <a href="http://wiki.openstreetmap.org/wiki/Template:Admin_level_10">Open Streetmap</a>. In other words <code>yd-4</code> would be the governorates of <a href="https://en.wikipedia.org/wiki/South_Yemen">South Yemen</a>. Not that we have them (yet), but <a href="mailto:stockholm@jplusplus.org">let us know</a> if you need them!
+
+  each props, dataset in pageData.datasets
+    h3 #{dataset}
+    p #{props.description}
+    p Aliases:
+      code #{pageData.datasetAliases[dataset]}
+    p Languages: 
+      each lang in pageData.datasets[dataset].languages
+        <a href="http://www.loc.gov/standards/iso639-2/php/langcodes_name.php?iso_639_1=#{lang}"><code>#{lang}</code></a>.
+      span The default language is <code>#{pageData.datasets[dataset].defaultLanguage}</code>.
+    p Recommended projections:
+      each proj in pageData.datasets[dataset].recommendedProjections
+        code #{proj}
+
+  h2#modules Modules
+  pre version/dataset/<b>modules</b>/date
+
+  p Modul names are separated by pipe (<code>|</code>). Default is to use every available module.
+
+  p Available modules are:
+    code #{pageData.modules}
+
+  each props, module in pageData.modulesettings
+    h3 #{module}
+    p #{props.description}
+    if 'parameters' in props
+      each methodparams, method in props.parameters
+        div Module specific parameters (<strong>#{method}</strong>):
+        dl
+        each paramprops, param in props.parameters.get
+          dt
+            code #{param}
+          dd
+            p #{paramprops.description}
+            dl
+              if 'default' in paramprops
+                dt Default:
+                dd
+                  if paramprops.default == ""
+                    i empty
+                  code #{paramprops.default}
+              if 'allowed' in paramprops
+                dt Allowed:
+                dd
+                  code #{paramprops.allowed}
+
+  h2#date Date
+  pre version/dataset/modules/<b>date</b>
+
+  p Can be on the form <code>YYYY-MM-DD</code>, <code>YYYY-MM</code>, or <code>YYYY</code>. Will include only areas that existed at that that date. To get current areas, use a far future date, or simply <code>9</code>.
+
+  h2 Languages
+  p Some properties of the datasets, such as names of political entities, are automatically translated using <a href="https://www.wikidata.org">WikiData</a>. When a translation is missing, the following fallback rules are applied, before falling back to the default language of the dataset, and lastly, to English:
+  each to, from in pageData.languageFallbacks
+    ul
+      li #{from} → #{to}
+  p If nothing else is stated, these rules apply to all modules that use the <code>language</code> parameter.
+
+  h2 Dataset versioning
+  p Datasets may contain different versions of borders. For instance, it might in some cases be useful to show Somaliland as a nation, given its <i>de facto</i> indepence, where as in other cases you might want to show its <i>de jure</i> status as part of Somalia. Let us know if you have any specific need for versioning!
+
+  h2#examples Examples
+
+  dl
+    dt SVG image of the world 2015
+    dd
+      code <a href="/v1/world/svg/2015">/v1/world/svg/2015</a>
+
+    dt All national borders as topojson, and their start and end date
+    dd
+      code <a href="/v1/world/geo|data/?data_props=sdate|edate&amp;geo_type=topojson">/v1/world/geo|data/?data_props=sdate|edate&geo_type=topojson</a>
+
+    dt All Swedish municipalities and their areas and names, in 1974, in Sami language
+    dd
+      code <a href="/v1/se-7/data/1974?data_props=area|name&amp;language=se">/v1/se-7/data/1974?data_props=area|name&data_lang=se</a>
+
+    dt Swedish municipalities, using the RT90 coordinate system
+    dd
+      code <a href="/v1/se-7/geo?projection=RT90">/v1/se-7/geo?geo_crs=RT90</a>
+
+    dt Metadata on the Swedish municipalities dataset
+    dd
+      code <a href="/v1/se-7/info">/v1/se-7/info</a>
+
+    dt Borders of the world on May 4th, 1994, using a specific variant of a subset of the world-2 dataset
+    dd
+      code <a href="/v1/world/geo/1994-05-04">/v1/world/geo/1945-05-04?geo_variant=somalia=2</a>
