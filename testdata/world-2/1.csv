@@ -588,3 +588,4 @@ id,shapeid,name,wikidata,class,sdate,edate,version,versionset
 592,596,Somalia,1045,so,1991-05-18,9,2,somalia
 593,597,Colony of Singapore,4373718,sg cx gb-,1955-11-23,1956-12-31,1,
 594,198,Colony of Singapore,4373718,sg gb-,1957-01-01,1963-08-30,1,
+999,599,Antarctica,-1,,0,9,1,
