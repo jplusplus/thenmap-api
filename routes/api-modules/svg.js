@@ -24,6 +24,10 @@ module.exports = function(ApiParams) {
     this.height = this.parameters["height"] || this.parameters["svg_height"]
     this.lang = this.parameters["svg_lang"] || null
     this.variant = this.parameters["svg_variant"] || null
+
+    /* Round up dimension for a better chance of caching */ 
+    this.width = Math.ceil(this.width / 20.0) * 20;
+    this.height = Math.ceil(this.height / 20.0) * 20;
  
     self.cacheKey = self.apiParams.date + self.apiParams.dataset + self.projection + self.width + self.height + this.parameters["svg_props"] + this.lang + this.variant
     if (self.cacheKey in Api._cache){
