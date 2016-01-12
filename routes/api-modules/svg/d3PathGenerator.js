@@ -35,6 +35,10 @@ module.exports = function(geojson, projection, dataset, options) {
     gr96: {
       rotate: [40,-75,0],
       offsetDenom: [1.85, 2.8]
+    },
+    swissgrid: {
+      rotate: [-7.439583, -46.95241],
+      offsetDenom: [2.9, 2.4]
     }
   }
   //All projections in one  array
