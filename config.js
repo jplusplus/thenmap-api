@@ -41,7 +41,7 @@ var config = {
           geo_crs: {
             description: "Coordinate reference system. Anything other that wgs84 will be reprojected, and therefore slower.",
             default: "wgs84",
-            allowed: ["sweref99", "wgs84", "rt90", "tm35fin"]
+            allowed: ["sweref99", "wgs84", "rt90", "tm35fin", "kkj"] //"ch1903"
           },
           geo_variant: {
             description: variant_desc
@@ -122,6 +122,13 @@ var config = {
       defaultLanguage: "fi",
       recommendedProjections: ["tm35fin"]
     },
+    "ch-8": {
+      description: "Swiss municipalities, from 2015",
+      bbox: [5.9,45.8,10.5,47.9],
+      languages: ["als", "frp", "lmo", "de", "fr", "it", "rm", "en", "sq", "es", "tr", "pt"],
+      defaultLanguage: "de",
+      recommendedProjections: ["swissgrid"]
+    },
     "se-7": {
       description: "Swedish municipalities, from 1974 (a few borders in southern Sweden still missing from 1973)",
       bbox: [10, 54, 25, 70],
@@ -182,6 +189,10 @@ var config = {
     "us4": "us-4",
 
     "us": "us-4",
+
+    "ch8": "ch-8",
+
+    "ch": "ch-8",
   },
   languageFallbacks: { //https://github.com/wikimedia/jquery.i18n/blob/master/src/jquery.i18n.fallbacks.js
     fit: "fi",
@@ -193,8 +204,11 @@ var config = {
     zh: "zh-hans",
     kl: "da",
     li: "nl",
-    wa: "fr"
+    wa: "fr",
+    als: "de",
+    frp: "fr",
+    lmo: "it"
   }
 }
 
-module.exports = config;
+module.exports = config
