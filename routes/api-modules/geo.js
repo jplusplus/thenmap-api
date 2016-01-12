@@ -16,6 +16,8 @@ module.exports = function(ApiParams) {
     "wgs84": "EPSG:4326",
     "tm35fin": "EPSG:3067",
     "gr96": "EPSG:4908",
+    "kkj": "EPSG:2393",
+    "ch1903": "EPSG:4150"
   }
 
   api.cleanup = function(geodata){
