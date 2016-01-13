@@ -1,4 +1,15 @@
 id,shapeid,municipality_code,name,wikidata,shn_code,class,sdate,edate
+1,9051,,Zürichsee,14407,,lake,0,9
+2,9073,,Thunersee,14426,,lake,0,9
+3,9711,,Lago Maggiore,14379,,lake,0,9
+4,9710,,Lago di Lugano,14418,,lake,0,9
+5,9089,,Brienzersee,14442,,lake,0,9
+6,9751,,Lac de Joux,14472,,lake,0,9
+7,9040,,Greifensee,14497,,lake,0,9
+8,9296,,Lac de Morat,14448,,lake,0,9
+9,9152,,Lake Neuchâtel,14375,,lake,0,9
+10,9758,,Lac Léman,6403,,lake,0,9
+11,9149,,Bielersee,14429,,lake,0,9
 10000,3762,3762,Scuol,69079,CH18253762,m3762,0,9
 10001,1631,1631,Glarus Süd,70695,CH08001631,m1631,0,9
 10002,3746,3746,Zernez,64609,CH18253746,m3746,0,9
