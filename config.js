@@ -116,9 +116,9 @@ var config = {
       recommendedProjections: The first of these this be used as default for SVG maps
     */
     "fi-8": {
-      description: "Finnish municipalities, from 2011",
+      description: "Finnish municipalities, from 2010",
       bbox: [19.1, 59.5, 31.6, 70.1],
-      languages: ["sv", "fi", "en", "ru", "se", "et"],
+      languages: ["sv", "fi", "en", "ru", "se", "et", "no"],
       defaultLanguage: "fi",
       recommendedProjections: ["tm35fin"]
     },
