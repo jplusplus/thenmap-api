@@ -18,7 +18,7 @@ debug(config)
 app.use(compression())
 
 // logging
-app.use(morgan('combined'))
+app.use(morgan('API/v1 :url'))
 
 // CORS
 app.use(function(req, res, next) {
