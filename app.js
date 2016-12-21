@@ -20,6 +20,9 @@ app.use(compression())
 // logging
 app.use(morgan('API/v1 :url'))
 
+// static
+app.use(express.static('public'))
+
 // CORS
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
