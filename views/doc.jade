@@ -58,7 +58,10 @@ block content
         dl
         each paramprops, param in props.parameters.get
           dt
-            code #{param}
+            if paramprops.deprecated
+              code.deprecated #{param}
+            else
+              code #{param}
           dd
             p #{paramprops.description}
             dl

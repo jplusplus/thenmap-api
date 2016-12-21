@@ -16,7 +16,8 @@ var config = {
             description: "Laguage to use for translatable properties, such as name. Available and default languages will depend on dataset chosen (use the `info` modul to find out more)."
           },
           language: {
-            description: "Deprecated. Use data_lang."
+            description: "Deprecated. Use data_lang.",
+            deprecated: true,
           },
           data_variant: {
             description: variant_desc
@@ -76,6 +77,7 @@ var config = {
           },
           projection: {
             description: "Deprecated. Use svg_proj.",
+            deprecated: true,
           },
 /*          mode: {
             description: "Should we return a fully functional SVG images, or an array of paths for further processing?",
@@ -84,9 +86,11 @@ var config = {
           },*/
           width: {
             description: "Deprecated. Use svg_width.",
+            deprecated: true,
           },
           height: {
             description: "Deprecated. Use svg_height.",
+            deprecated: true,
           },
           svg_width: {
             description: "Used for viewport size, and, if mode=full, svg width attribute. (px)",
