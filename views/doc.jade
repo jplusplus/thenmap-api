@@ -3,7 +3,9 @@ block vars
    - var title = "Docs"
 
 block content
-  h1 #{title}
+  header
+    .back #[a(href="//www.thenmap.net") &larr; Back to main page]
+    h1 #{title}
   p.lead Welcome to the Thenmap API!
 
   p General syntax:
