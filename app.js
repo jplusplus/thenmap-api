@@ -1,8 +1,9 @@
-'use strict';
+'use strict'
 
 var debug = require('debug')
 var compression = require('compression')
 var express = require('express')
+var morgan = require('morgan')
 var config = require(__dirname + '/config.js')
 
 var app = express()
@@ -15,6 +16,9 @@ debug(config)
 
 // compress all requests
 app.use(compression())
+
+// logging
+app.use(morgan('combined'))
 
 // CORS
 app.use(function(req, res, next) {
