@@ -130,7 +130,7 @@ var config = {
       recommendedProjections: ["swissgrid"]
     },
     "no-7": {
-      description: "Norwegian municipalities, from 2013",
+      description: "Norwegian municipalities, from 2012",
       bbox: [10, 54, 25, 70],
       languages: ["nb", "nn", "en", "se", "fi", "da"],
       defaultLanguage: "nb",
