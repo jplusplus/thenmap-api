@@ -17,7 +17,8 @@ module.exports = function(ApiParams) {
     "tm35fin": "EPSG:3067",
     "gr96": "EPSG:4908",
     "kkj": "EPSG:2393",
-    "ch1903": "EPSG:4150"
+    "ch1903": "EPSG:4150",
+    "etrs89": "EPSG:4258",
   }
 
   api.cleanup = function(geodata){
@@ -28,7 +29,7 @@ module.exports = function(ApiParams) {
       var cleanedFeature = {
         "type":"Feature",
         "properties": {
-          "id": feature.properties.ID || feature.properties.id
+          "id": utils.getParam(feature.properties.ID, feature.properties.id)
         },
         "geometry": feature.geometry
       }
@@ -70,7 +71,6 @@ module.exports = function(ApiParams) {
 
         // cleanup
         geodata = self.cleanup(geodata)
-
         // filter geodata
         var res = geodata.features.filter(function (feature) {
           return (parseInt(feature.properties.id) in datadata)

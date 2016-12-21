@@ -41,7 +41,7 @@ var config = {
           geo_crs: {
             description: "Coordinate reference system. Anything other that wgs84 will be reprojected, and therefore slower.",
             default: "wgs84",
-            allowed: ["sweref99", "wgs84", "rt90", "tm35fin", "kkj"] //"ch1903"
+            allowed: ["sweref99", "wgs84", "rt90", "tm35fin", "kkj", "etrs89"] //"ch1903"
           },
           geo_variant: {
             description: variant_desc
@@ -129,6 +129,13 @@ var config = {
       defaultLanguage: "de",
       recommendedProjections: ["swissgrid"]
     },
+    "no-7": {
+      description: "Norwegian municipalities, from 2013",
+      bbox: [10, 54, 25, 70],
+      languages: ["nb", "nn", "en", "se", "fi", "da"],
+      defaultLanguage: "nb",
+      recommendedProjections: ["euref89no"]
+    },
     "se-7": {
       description: "Swedish municipalities, from 1974 (a few borders in southern Sweden still missing from 1973)",
       bbox: [10, 54, 25, 70],
@@ -184,6 +191,9 @@ var config = {
     "sweden": "se-7",
     "se": "se-7",
 
+    "norway": "no-7",
+    "no": "no-7",
+
     "world": "world-2",
 
     "us4": "us-4",
@@ -197,8 +207,9 @@ var config = {
   languageFallbacks: { //https://github.com/wikimedia/jquery.i18n/blob/master/src/jquery.i18n.fallbacks.js
     fit: "fi",
     fkv: "fi",
-    nn: "no",
+    nn: "nb",
     no: "nb",
+    nn: "nn",
     sr: "sr-ec",
     uk: "ru",
     zh: "zh-hans",
