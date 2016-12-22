@@ -127,7 +127,7 @@ var config = {
       recommendedProjections: ["tm35fin"]
     },
     "ch-8": {
-      description: "Swiss municipalities, from 2015. Data source: Federal Office of Topography. Please note the source when reusing the data.",
+      description: "Swiss municipalities, from 2010. Data source: Federal Office of Topography. Please note the source when reusing the data.",
       bbox: [5.9,45.8,10.5,47.9],
       languages: ["als", "frp", "lmo", "de", "fr", "it", "rm", "en", "sq", "es", "tr", "pt"],
       defaultLanguage: "de",
